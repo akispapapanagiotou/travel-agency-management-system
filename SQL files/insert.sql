@@ -395,7 +395,7 @@ INSERT INTO offers VALUES
 SET GLOBAL local_infile=true;
 
 /* loads the data to the reservation_offers table from an external csv file */ 
-LOAD DATA LOCAL INFILE 'C:/Users/akisp/Desktop/CEID/Databases - Project/Project Travel Agency/SQL/reservation_offers_data.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/akisp/Desktop/CEID/Databases - Project/Project Travel Agency/SQL files/reservation_offers_data.csv'
 INTO TABLE reservation_offers
 FIELDS TERMINATED BY ','
 LINES TERMINATED BY '\n';
