@@ -20,6 +20,10 @@ DROP PROCEDURE IF EXISTS get_branch_entries;
 DROP PROCEDURE IF EXISTS add_branch_entry;
 DROP PROCEDURE IF EXISTS update_branch_entry;
 DROP PROCEDURE IF EXISTS delete_branch_entry;
+DROP PROCEDURE IF EXISTS get_phone_entries;
+DROP PROCEDURE IF EXISTS add_phone_entry;
+DROP PROCEDURE IF EXISTS update_phone_entry;
+DROP PROCEDURE IF EXISTS delete_phone_entry;
 
 
 
@@ -193,7 +197,7 @@ DELIMITER $
 CREATE PROCEDURE update_branch_entry(IN br_code INT, IN br_street VARCHAR(30), IN br_num INT, IN br_city VARCHAR(30))
 BEGIN
 	UPDATE branch
-    SET branch.br_street=br_street, branch.br_num=br_num, branch.br_city=br_city
+    SET branch.br_code=br_code, branch.br_street=br_street, branch.br_num=br_num, branch.br_city=br_city
     WHERE branch.br_code = br_code;
 END$
 DELIMITER ;
@@ -206,5 +210,49 @@ CREATE PROCEDURE delete_branch_entry(IN br_code INT)
 BEGIN
 	DELETE FROM branch
     WHERE branch.br_code = br_code;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that returns all the phone entries. */ 
+DELIMITER $
+CREATE PROCEDURE get_phone_entries()
+BEGIN
+	SELECT * FROM phones;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that adds an entry to the phones table. */ 
+DELIMITER $
+CREATE PROCEDURE add_phone_entry(IN ph_br_code INT, IN ph_number CHAR(10))
+BEGIN
+	INSERT INTO phones VALUES
+	(ph_br_code, ph_number);
+END$
+DELIMITER ;
+
+
+
+/* Procedure that updates an existing entry of the phones table. */
+DELIMITER $
+CREATE PROCEDURE update_phone_entry(IN ph_br_code INT, IN ph_number CHAR(10))
+BEGIN
+	UPDATE phones
+    SET phones.ph_br_code=ph_br_code, phones.ph_number=ph_number
+    WHERE phones.ph_number = ph_number;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that deletes an entry from the phones table. */
+DELIMITER $
+CREATE PROCEDURE delete_phone_entry(IN ph_br_code INT, IN ph_number CHAR(10))
+BEGIN
+	DELETE FROM phones
+    WHERE phones.ph_br_code = ph_br_code AND phones.ph_number = ph_number;
 END$
 DELIMITER ;
