@@ -1507,8 +1507,23 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel worker;
     // End of variables declaration//GEN-END:variables
 
-    public void showWelcomeMessage(String username) {
-       welcomeMessage.setText("Welcome, " + username);
+    public void displayWelcomeMessage(){
+        String sql = "{CALL get_active_IT_manager()}";
+        
+        try {
+            CallableStatement getActiveITManager = DBConnection.getInstance().getConnection().prepareCall(sql);
+            ResultSet result = getActiveITManager.executeQuery();
+            
+            if (result.next()) {
+                String activeITManager = result.getString("Username");
+                welcomeMessage.setText("Welcome " + activeITManager);
+            }
+             if (result!=null) {
+                result.close();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
     }
     
     public void displayExpensesPerBranchTable(){
@@ -1730,6 +1745,7 @@ public class Dashboard extends javax.swing.JFrame {
     }
     
     public void displayHomePage(){
+        displayWelcomeMessage();
         displayExpensesPerBranchTable();
         displayReservationsPerTripTable();
         displayTotalIncome();

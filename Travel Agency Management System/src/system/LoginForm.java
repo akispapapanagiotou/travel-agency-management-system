@@ -7,8 +7,6 @@ import javax.swing.JOptionPane;
 
 public class LoginForm extends javax.swing.JFrame {
     
-    private String username;
-    
     public LoginForm() {
         initComponents();
         
@@ -231,11 +229,9 @@ public class LoginForm extends javax.swing.JFrame {
             
             if (result.next()){ 
                 setITManagerActive(username);
-                setUsername(username);
                 dispose();
                 Dashboard dashboard = new Dashboard();
                 dashboard.setVisible(true);
-                dashboard.showWelcomeMessage(getUsername());
             } else {
                 JOptionPane.showMessageDialog(this, "The Username / Password you entered is wrong!", "Error", JOptionPane.ERROR_MESSAGE);
                 usernameField.setText("");
@@ -259,14 +255,6 @@ public class LoginForm extends javax.swing.JFrame {
          } catch (SQLException ex) {
             ex.printStackTrace();
         }
-    }
-    
-    public void setUsername(String username){
-        this.username = username;
-    }
-    
-    public String getUsername(){
-        return username;
     }
     
     private void handleAppClosing() {

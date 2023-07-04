@@ -5,6 +5,7 @@ database management system.
 
 DROP PROCEDURE IF EXISTS get_IT_manager;
 DROP PROCEDURE IF EXISTS set_IT_manager_active;
+DROP PROCEDURE IF EXISTS get_active_IT_manager;
 DROP PROCEDURE IF EXISTS set_IT_managers_inactive;
 DROP PROCEDURE IF EXISTS get_branch_expenses;
 DROP PROCEDURE IF EXISTS get_trip_reservations;
@@ -42,6 +43,18 @@ BEGIN
 	UPDATE it_manager 
     INNER JOIN worker ON worker.wrk_AT=it_manager.it_AT
     SET it_is_active=TRUE WHERE wrk_lname=username;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that retrieves the active IT manager. */
+DELIMITER $
+CREATE PROCEDURE get_active_IT_manager()
+BEGIN
+	SELECT worker.wrk_lname AS "Username" FROM it_manager
+    INNER JOIN worker ON worker.wrk_AT=it_manager.it_AT
+    WHERE it_manager.it_is_active = TRUE;
 END$
 DELIMITER ;
 
