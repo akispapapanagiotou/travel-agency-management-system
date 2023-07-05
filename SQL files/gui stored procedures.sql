@@ -19,11 +19,15 @@ DROP PROCEDURE IF EXISTS get_No_of_admins;
 DROP PROCEDURE IF EXISTS get_branch_entries;
 DROP PROCEDURE IF EXISTS add_branch_entry;
 DROP PROCEDURE IF EXISTS update_branch_entry;
-DROP PROCEDURE IF EXISTS delete_branch_entry;
+DROP PROCEDURE IF EXISTS delete_branch_entry; 
 DROP PROCEDURE IF EXISTS get_phone_entries;
 DROP PROCEDURE IF EXISTS add_phone_entry;
 DROP PROCEDURE IF EXISTS update_phone_entry;
 DROP PROCEDURE IF EXISTS delete_phone_entry;
+DROP PROCEDURE IF EXISTS get_worker_entries;
+DROP PROCEDURE IF EXISTS add_worker_entry;
+DROP PROCEDURE IF EXISTS update_worker_entry;
+DROP PROCEDURE IF EXISTS delete_worker_entry;
 
 
 
@@ -254,5 +258,49 @@ CREATE PROCEDURE delete_phone_entry(IN ph_br_code INT, IN ph_number CHAR(10))
 BEGIN
 	DELETE FROM phones
     WHERE phones.ph_br_code = ph_br_code AND phones.ph_number = ph_number;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that returns all the worker entries. */
+DELIMITER $
+CREATE PROCEDURE get_worker_entries()
+BEGIN
+	SELECT * FROM worker;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that adds an entry to the worker table. */ 
+DELIMITER $
+CREATE PROCEDURE add_worker_entry(IN wrk_AT CHAR(10), IN wrk_name VARCHAR(20), IN wrk_lname VARCHAR(20), IN wrk_salary FLOAT, IN wrk_br_code INT)
+BEGIN
+	INSERT INTO worker VALUES
+	(wrk_AT, wrk_name, wrk_lname, wrk_salary, wrk_br_code);
+END$
+DELIMITER ;
+
+
+
+/* Procedure that updates an existing entry of the worker table. */
+DELIMITER $
+CREATE PROCEDURE update_worker_entry(IN wrk_AT CHAR(10), IN wrk_name VARCHAR(20), IN wrk_lname VARCHAR(20), IN wrk_salary FLOAT, IN wrk_br_code INT)
+BEGIN
+	UPDATE worker
+    SET worker.wrk_AT=wrk_AT, worker.wrk_name=wrk_name, worker.wrk_lname=wrk_lname, worker.wrk_salary=wrk_salary, worker.wrk_br_code=wrk_br_code
+    WHERE worker.wrk_AT = wrk_AT;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that deletes an entry from the worker table. */
+DELIMITER $
+CREATE PROCEDURE delete_worker_entry(IN wrk_AT INT)
+BEGIN
+	DELETE FROM worker
+    WHERE worker.wrk_AT = wrk_AT;
 END$
 DELIMITER ;
