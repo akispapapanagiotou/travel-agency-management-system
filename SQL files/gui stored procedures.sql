@@ -298,7 +298,7 @@ DELIMITER ;
 
 /* Procedure that deletes an entry from the worker table. */
 DELIMITER $
-CREATE PROCEDURE delete_worker_entry(IN wrk_AT INT)
+CREATE PROCEDURE delete_worker_entry(IN wrk_AT CHAR(10))
 BEGIN
 	DELETE FROM worker
     WHERE worker.wrk_AT = wrk_AT;

@@ -514,10 +514,10 @@ public class ManageBranch extends javax.swing.JFrame {
          String sql = "{CALL delete_branch_entry(?)}";
          
          try {
-            CallableStatement updateBranchEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
-            updateBranchEntries.setInt(1, branchId);
+            CallableStatement deleteBranchEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
+            deleteBranchEntries.setInt(1, branchId);
             
-            int rowCount = updateBranchEntries.executeUpdate();
+            int rowCount = deleteBranchEntries.executeUpdate();
             
             isDeleted = rowCount > 0;
             
