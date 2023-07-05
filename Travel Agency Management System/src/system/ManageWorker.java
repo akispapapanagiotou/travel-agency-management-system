@@ -311,19 +311,19 @@ public class ManageWorker extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(95, 95, 95)
+                .addGap(86, 86, 86)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(109, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 293, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(239, 239, 239))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -433,7 +433,6 @@ public class ManageWorker extends javax.swing.JFrame {
         String sql = "{CALL get_worker_entries()}";
         
         workerTable.getTableHeader().setFont(new Font("Calibri", Font.PLAIN, 17));
-        workerTable.getColumnModel().getColumn(1).setPreferredWidth(200);
         
         // Create a header renderer for header 
         DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
@@ -451,8 +450,8 @@ public class ManageWorker extends javax.swing.JFrame {
         }
         
         try {
-            CallableStatement getBranchEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
-            ResultSet result = getBranchEntries.executeQuery();
+            CallableStatement getWorkerEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
+            ResultSet result = getWorkerEntries.executeQuery();
             
             while (result.next()) {
                 String workerAT = result.getString("wrk_AT");

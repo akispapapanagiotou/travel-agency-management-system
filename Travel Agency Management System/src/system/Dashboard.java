@@ -834,6 +834,11 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         admin.setBackground(new java.awt.Color(200, 200, 200));
+        admin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                adminMouseClicked(evt);
+            }
+        });
 
         jLabel15.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(0, 0, 0));
@@ -1436,6 +1441,12 @@ public class Dashboard extends javax.swing.JFrame {
         manageWorker.setVisible(true);
         dispose();
     }//GEN-LAST:event_workerMouseClicked
+
+    private void adminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminMouseClicked
+        ManageAdmin manageAdmin = new ManageAdmin();
+        manageAdmin.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_adminMouseClicked
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -13,22 +13,23 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-public class ManagePhones extends javax.swing.JFrame {
+public class ManageAdmin extends javax.swing.JFrame {
 
-    private int branchId;
-    private String phoneNumber;
+    private String adminAT;
+    private String adminType;
+    private String adminDiploma;
     
-    public ManagePhones() {
+    public ManageAdmin() {
         initComponents();
         
-         addWindowListener(new WindowAdapter() {
+        addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
                 handleAppClosing();
             }
         });
-         
-         displayPhonesTable();
+        
+        displayAdminTable();
     }
 
     @SuppressWarnings("unchecked")
@@ -40,8 +41,8 @@ public class ManagePhones extends javax.swing.JFrame {
         goBack = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         usernameLabel1 = new javax.swing.JLabel();
-        branchCodeField = new javax.swing.JTextField();
-        phoneNumberField = new javax.swing.JTextField();
+        adminATField = new javax.swing.JTextField();
+        adminTypeField = new javax.swing.JTextField();
         usernameLabel = new javax.swing.JLabel();
         addPanel = new javax.swing.JPanel();
         add = new javax.swing.JLabel();
@@ -49,12 +50,13 @@ public class ManagePhones extends javax.swing.JFrame {
         update = new javax.swing.JLabel();
         deletePanel = new javax.swing.JPanel();
         delete = new javax.swing.JLabel();
+        usernameLabel2 = new javax.swing.JLabel();
+        adminDiplomaField = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
-        phonesTable = new javax.swing.JTable();
+        adminTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Manage Phones | Travel Agency Management System");
-        setResizable(false);
+        setTitle("Manage Admin | Travel Agency Management System");
 
         jPanel1.setBackground(new java.awt.Color(45, 62, 80));
         jPanel1.setPreferredSize(new java.awt.Dimension(1263, 669));
@@ -92,17 +94,17 @@ public class ManagePhones extends javax.swing.JFrame {
 
         usernameLabel1.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         usernameLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        usernameLabel1.setText("Branch Code:");
+        usernameLabel1.setText("AT:");
 
-        branchCodeField.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        branchCodeField.setForeground(new java.awt.Color(0, 0, 0));
+        adminATField.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        adminATField.setForeground(new java.awt.Color(0, 0, 0));
 
-        phoneNumberField.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        phoneNumberField.setForeground(new java.awt.Color(0, 0, 0));
+        adminTypeField.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        adminTypeField.setForeground(new java.awt.Color(0, 0, 0));
 
         usernameLabel.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         usernameLabel.setForeground(new java.awt.Color(255, 255, 255));
-        usernameLabel.setText("Phone Number:");
+        usernameLabel.setText("Type:");
 
         addPanel.setBackground(new java.awt.Color(255, 51, 51));
         addPanel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -188,6 +190,13 @@ public class ManagePhones extends javax.swing.JFrame {
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
+        usernameLabel2.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
+        usernameLabel2.setForeground(new java.awt.Color(255, 255, 255));
+        usernameLabel2.setText("Diploma:");
+
+        adminDiplomaField.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        adminDiplomaField.setForeground(new java.awt.Color(0, 0, 0));
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -203,8 +212,10 @@ public class ManagePhones extends javax.swing.JFrame {
                             .addComponent(usernameLabel1)
                             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(usernameLabel)
-                                .addComponent(branchCodeField)
-                                .addComponent(phoneNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addComponent(adminATField)
+                                .addComponent(adminTypeField, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(usernameLabel2)
+                            .addComponent(adminDiplomaField, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addComponent(addPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -221,12 +232,16 @@ public class ManagePhones extends javax.swing.JFrame {
                 .addGap(99, 99, 99)
                 .addComponent(usernameLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(branchCodeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(adminATField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(39, 39, 39)
                 .addComponent(usernameLabel)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(phoneNumberField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 279, Short.MAX_VALUE)
+                .addComponent(adminTypeField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(37, 37, 37)
+                .addComponent(usernameLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(adminDiplomaField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 175, Short.MAX_VALUE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(deletePanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -235,28 +250,28 @@ public class ManagePhones extends javax.swing.JFrame {
                 .addGap(17, 17, 17))
         );
 
-        phonesTable.setBackground(new java.awt.Color(200, 200, 200));
-        phonesTable.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
-        phonesTable.setForeground(new java.awt.Color(0, 0, 0));
-        phonesTable.setModel(new javax.swing.table.DefaultTableModel(
+        adminTable.setBackground(new java.awt.Color(200, 200, 200));
+        adminTable.setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
+        adminTable.setForeground(new java.awt.Color(0, 0, 0));
+        adminTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Branch Code", "Phone Number"
+                "AT", "Type", "Diploma"
             }
         ));
-        phonesTable.setRowHeight(25);
-        phonesTable.setSelectionBackground(new java.awt.Color(255, 106, 53));
-        phonesTable.setShowGrid(true);
-        phonesTable.getTableHeader().setResizingAllowed(false);
-        phonesTable.getTableHeader().setReorderingAllowed(false);
-        phonesTable.addMouseListener(new java.awt.event.MouseAdapter() {
+        adminTable.setRowHeight(25);
+        adminTable.setSelectionBackground(new java.awt.Color(255, 106, 53));
+        adminTable.setShowGrid(true);
+        adminTable.getTableHeader().setResizingAllowed(false);
+        adminTable.getTableHeader().setReorderingAllowed(false);
+        adminTable.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                phonesTableMouseClicked(evt);
+                adminTableMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(phonesTable);
+        jScrollPane2.setViewportView(adminTable);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -304,60 +319,64 @@ public class ManagePhones extends javax.swing.JFrame {
         dispose();
     }//GEN-LAST:event_goBackMouseClicked
 
-    private void phonesTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_phonesTableMouseClicked
-        int rowNumber = phonesTable.getSelectedRow();
-        TableModel model = phonesTable.getModel();
-
-        branchCodeField.setText(model.getValueAt(rowNumber, 0).toString());
-        phoneNumberField.setText(model.getValueAt(rowNumber, 1).toString());
-    }//GEN-LAST:event_phonesTableMouseClicked
-
     private void addPanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addPanelMouseClicked
-        if (addPhoneNumber() == true) {
-            JOptionPane.showMessageDialog(this, "The phone number was added.");
+        if (addAdmin() == true) {
+            JOptionPane.showMessageDialog(this, "The admin was added.");
 
             // Clear phones Table
-            DefaultTableModel model = (DefaultTableModel) phonesTable.getModel();
+            DefaultTableModel model = (DefaultTableModel) adminTable.getModel();
             model.setRowCount(0);
 
-            displayPhonesTable();
+            displayAdminTable();
         } else {
-            JOptionPane.showMessageDialog(this, "Phone number addition failed!");
+            JOptionPane.showMessageDialog(this, "Admin addition failed!");
         }
     }//GEN-LAST:event_addPanelMouseClicked
 
     private void updatePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updatePanelMouseClicked
-        if (updatePhoneNumber() == true) {
-            JOptionPane.showMessageDialog(this, "The phone number was updated.");
+        if (updateAdmin() == true) {
+            JOptionPane.showMessageDialog(this, "The admin was updated.");
 
             // Clear phones Table
-            DefaultTableModel model = (DefaultTableModel) phonesTable.getModel();
+            DefaultTableModel model = (DefaultTableModel) adminTable.getModel();
             model.setRowCount(0);
 
-            displayPhonesTable();
+            displayAdminTable();
         } else {
-            JOptionPane.showMessageDialog(this, "Phone number update failed!");
+            JOptionPane.showMessageDialog(this, "Admin update failed!");
         }
     }//GEN-LAST:event_updatePanelMouseClicked
 
     private void deletePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deletePanelMouseClicked
-        if (deletePhoneNumber() == true) {
-            JOptionPane.showMessageDialog(this, "The phone number was deleted.");
+        if (deleteAdmin() == true) {
+            JOptionPane.showMessageDialog(this, "The admin was deleted.");
 
             // Clear phones Table
-            DefaultTableModel model = (DefaultTableModel) phonesTable.getModel();
+            DefaultTableModel model = (DefaultTableModel) adminTable.getModel();
             model.setRowCount(0);
 
-            displayPhonesTable();
+            displayAdminTable();
         } else {
-            JOptionPane.showMessageDialog(this, "Phone number deletion failed!");
+            JOptionPane.showMessageDialog(this, "Admin deletion failed!");
         }
     }//GEN-LAST:event_deletePanelMouseClicked
+
+    private void adminTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_adminTableMouseClicked
+        int rowNumber = adminTable.getSelectedRow();
+        TableModel model = adminTable.getModel();
+
+        adminATField.setText(model.getValueAt(rowNumber, 0).toString());
+        adminTypeField.setText(model.getValueAt(rowNumber, 1).toString());
+        adminDiplomaField.setText(model.getValueAt(rowNumber, 2).toString());
+    }//GEN-LAST:event_adminTableMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel add;
     private javax.swing.JPanel addPanel;
-    private javax.swing.JTextField branchCodeField;
+    private javax.swing.JTextField adminATField;
+    private javax.swing.JTextField adminDiplomaField;
+    private javax.swing.JTable adminTable;
+    private javax.swing.JTextField adminTypeField;
     private javax.swing.JLabel delete;
     private javax.swing.JPanel deletePanel;
     private javax.swing.JPanel goBack;
@@ -365,19 +384,18 @@ public class ManagePhones extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField phoneNumberField;
-    private javax.swing.JTable phonesTable;
     private javax.swing.JLabel update;
     private javax.swing.JPanel updatePanel;
     private javax.swing.JLabel usernameLabel;
     private javax.swing.JLabel usernameLabel1;
+    private javax.swing.JLabel usernameLabel2;
     // End of variables declaration//GEN-END:variables
 
-public void displayPhonesTable(){
-        String sql = "{CALL get_phone_entries()}";
+    public void displayAdminTable(){
+        String sql = "{CALL get_admin_entries()}";
         
-        phonesTable.getTableHeader().setFont(new Font("Calibri", Font.PLAIN, 17));
-        phonesTable.getColumnModel().getColumn(1).setPreferredWidth(200);
+        adminTable.getTableHeader().setFont(new Font("Calibri", Font.PLAIN, 17));
+        adminTable.getColumnModel().getColumn(1).setPreferredWidth(200);
         
         // Create a header renderer for header 
         DefaultTableCellRenderer headerRenderer = new DefaultTableCellRenderer();
@@ -389,21 +407,22 @@ public void displayPhonesTable(){
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();
         centerRenderer.setHorizontalAlignment( JLabel.CENTER );
         
-        for (int i = 0; i < phonesTable.getColumnCount(); i++) {
-            phonesTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
-            phonesTable.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
+        for (int i = 0; i < adminTable.getColumnCount(); i++) {
+            adminTable.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
+            adminTable.getTableHeader().getColumnModel().getColumn(i).setHeaderRenderer(headerRenderer);
         }
         
         try {
-            CallableStatement getPhonesEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
-            ResultSet result = getPhonesEntries.executeQuery();
+            CallableStatement getAdminEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
+            ResultSet result = getAdminEntries.executeQuery();
             
             while (result.next()) {
-                int branchId = result.getInt("ph_br_code");
-                String phoneNumber = result.getString("ph_number");
-                
-                Object tableData[] = {branchId, phoneNumber};
-                DefaultTableModel tableModel = (DefaultTableModel)phonesTable.getModel();
+                String adminAT = result.getString("adm_AT");
+                String adminType = result.getString("adm_type");
+                String adminDiploma = result.getString("adm_diploma");
+                      
+                Object tableData[] = {adminAT, adminType, adminDiploma};
+                DefaultTableModel tableModel = (DefaultTableModel)adminTable.getModel();
                 
                 tableModel.addRow(tableData);
             }
@@ -415,20 +434,22 @@ public void displayPhonesTable(){
         }
     }
     
-    public boolean addPhoneNumber(){
+    public boolean addAdmin(){
         boolean isAdded = false;
         
-        branchId = Integer.parseInt(branchCodeField.getText());
-        phoneNumber = phoneNumberField.getText();
+        adminAT = adminATField.getText();
+        adminType = adminTypeField.getText();
+        adminDiploma = adminDiplomaField.getText();
         
-        String sql = "{CALL add_phone_entry(?, ?)}";
+        String sql = "{CALL add_admin_entry(?, ?, ?)}";
         
         try {
-            CallableStatement addPhoneEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
-            addPhoneEntries.setInt(1, branchId);
-            addPhoneEntries.setString(2, phoneNumber);
+            CallableStatement addAdminEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
+            addAdminEntries.setString(1, adminAT);
+            addAdminEntries.setString(2, adminType);
+            addAdminEntries.setString(3, adminDiploma);
             
-            int rowCount = addPhoneEntries.executeUpdate();
+            int rowCount = addAdminEntries.executeUpdate();
             isAdded = rowCount > 0;
             
         } catch (SQLException ex) {
@@ -438,20 +459,22 @@ public void displayPhonesTable(){
         return isAdded;
     }
     
-    public boolean updatePhoneNumber() {
+    public boolean updateAdmin() {
          boolean isUpdated = false;
          
-         branchId = Integer.parseInt(branchCodeField.getText());
-         phoneNumber = phoneNumberField.getText();
+         adminAT = adminATField.getText();
+         adminType = adminTypeField.getText();
+         adminDiploma = adminDiplomaField.getText();
          
-         String sql = "{CALL update_phone_entry(?, ?)}";
+         String sql = "{CALL update_admin_entry(?, ?, ?)}";
          
          try {
-            CallableStatement updatePhoneEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
-            updatePhoneEntries.setInt(1, branchId);
-            updatePhoneEntries.setString(2, phoneNumber);
+            CallableStatement updateAdminEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
+            updateAdminEntries.setString(1, adminAT);
+            updateAdminEntries.setString(2, adminType);
+            updateAdminEntries.setString(3, adminDiploma);
             
-            int rowCount = updatePhoneEntries.executeUpdate();
+            int rowCount = updateAdminEntries.executeUpdate();
             
             isUpdated = rowCount > 0;
             
@@ -462,20 +485,18 @@ public void displayPhonesTable(){
         return isUpdated;
     }
     
-    public boolean deletePhoneNumber() {
+    public boolean deleteAdmin() {
          boolean isDeleted = false;
          
-         branchId = Integer.parseInt(branchCodeField.getText());
-         phoneNumber = phoneNumberField.getText();
+         adminAT = adminATField.getText();
          
-         String sql = "{CALL delete_phone_entry(?, ?)}";
+         String sql = "{CALL delete_worker_entry(?)}";
          
          try {
-            CallableStatement deletePhoneEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
-            deletePhoneEntries.setInt(1, branchId);
-            deletePhoneEntries.setString(2, phoneNumber);
+            CallableStatement deleteAdminEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
+            deleteAdminEntries.setString(1, adminAT);
             
-            int rowCount = deletePhoneEntries.executeUpdate();
+            int rowCount = deleteAdminEntries.executeUpdate();
             
             isDeleted = rowCount > 0;
             

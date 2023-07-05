@@ -28,6 +28,10 @@ DROP PROCEDURE IF EXISTS get_worker_entries;
 DROP PROCEDURE IF EXISTS add_worker_entry;
 DROP PROCEDURE IF EXISTS update_worker_entry;
 DROP PROCEDURE IF EXISTS delete_worker_entry;
+DROP PROCEDURE IF EXISTS get_admin_entries;
+DROP PROCEDURE IF EXISTS add_admin_entry;
+DROP PROCEDURE IF EXISTS update_admin_entry;
+DROP PROCEDURE IF EXISTS delete_admin_entry;
 
 
 
@@ -302,5 +306,49 @@ CREATE PROCEDURE delete_worker_entry(IN wrk_AT CHAR(10))
 BEGIN
 	DELETE FROM worker
     WHERE worker.wrk_AT = wrk_AT;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that returns all the admin entries. */
+DELIMITER $
+CREATE PROCEDURE get_admin_entries()
+BEGIN
+	SELECT * FROM admin;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that adds an entry to the admin table. */ 
+DELIMITER $
+CREATE PROCEDURE add_admin_entry(IN adm_AT CHAR(10), IN adm_type ENUM('LOGISTICS', 'ADMINISTRATIVE', 'ACCOUNTING'), IN adm_diploma VARCHAR(200))
+BEGIN
+	INSERT INTO admin VALUES
+	(adm_AT, adm_type, adm_diploma);
+END$
+DELIMITER ;
+
+
+
+/* Procedure that updates an existing entry of the admin table. */
+DELIMITER $
+CREATE PROCEDURE update_admin_entry(IN adm_AT CHAR(10), IN adm_type ENUM('LOGISTICS', 'ADMINISTRATIVE', 'ACCOUNTING'), IN adm_diploma VARCHAR(200))
+BEGIN
+	UPDATE admin
+    SET admin.adm_AT=adm_AT, admin.adm_type=adm_type, admin.adm_diploma=adm_diploma
+    WHERE admin.adm_AT = adm_AT;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that deletes an entry from the admin table. */
+DELIMITER $
+CREATE PROCEDURE delete_admin_entry(IN adm_AT CHAR(10))
+BEGIN
+	DELETE FROM admin
+    WHERE admin.adm_AT = adm_AT;
 END$
 DELIMITER ;
