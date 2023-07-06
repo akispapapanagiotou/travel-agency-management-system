@@ -848,17 +848,17 @@ public class Dashboard extends javax.swing.JFrame {
         admin.setLayout(adminLayout);
         adminLayout.setHorizontalGroup(
             adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLayout.createSequentialGroup()
-                .addContainerGap(36, Short.MAX_VALUE)
-                .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(31, 31, 31))
+            .addGroup(adminLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel15)
+                .addContainerGap(50, Short.MAX_VALUE))
         );
         adminLayout.setVerticalGroup(
             adminLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel15)
-                .addGap(26, 26, 26))
+                .addGap(27, 27, 27))
         );
 
         phones.setBackground(new java.awt.Color(200, 200, 200));
@@ -876,20 +876,25 @@ public class Dashboard extends javax.swing.JFrame {
         phones.setLayout(phonesLayout);
         phonesLayout.setHorizontalGroup(
             phonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, phonesLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+            .addGroup(phonesLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jLabel16)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         phonesLayout.setVerticalGroup(
             phonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(phonesLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(27, 27, 27)
                 .addComponent(jLabel16)
-                .addContainerGap(29, Short.MAX_VALUE))
+                .addContainerGap(28, Short.MAX_VALUE))
         );
 
         manages.setBackground(new java.awt.Color(200, 200, 200));
+        manages.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                managesMouseClicked(evt);
+            }
+        });
 
         jLabel17.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
@@ -945,17 +950,17 @@ public class Dashboard extends javax.swing.JFrame {
         driver.setLayout(driverLayout);
         driverLayout.setHorizontalGroup(
             driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(driverLayout.createSequentialGroup()
-                .addGap(39, 39, 39)
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(53, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, driverLayout.createSequentialGroup()
+                .addContainerGap(56, Short.MAX_VALUE)
+                .addComponent(jLabel19)
+                .addGap(54, 54, 54))
         );
         driverLayout.setVerticalGroup(
             driverLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(driverLayout.createSequentialGroup()
                 .addGap(23, 23, 23)
                 .addComponent(jLabel19)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         event.setBackground(new java.awt.Color(200, 200, 200));
@@ -970,15 +975,15 @@ public class Dashboard extends javax.swing.JFrame {
             eventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eventLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(41, 41, 41))
+                .addComponent(jLabel20)
+                .addGap(50, 50, 50))
         );
         eventLayout.setVerticalGroup(
             eventLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(eventLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, eventLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel20)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         guide.setBackground(new java.awt.Color(200, 200, 200));
@@ -991,17 +996,17 @@ public class Dashboard extends javax.swing.JFrame {
         guide.setLayout(guideLayout);
         guideLayout.setHorizontalGroup(
             guideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guideLayout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
-                .addComponent(jLabel21, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37))
+            .addGroup(guideLayout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(jLabel21)
+                .addContainerGap(55, Short.MAX_VALUE))
         );
         guideLayout.setVerticalGroup(
             guideLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(guideLayout.createSequentialGroup()
-                .addGap(23, 23, 23)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, guideLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel21)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(22, 22, 22))
         );
 
         trip.setBackground(new java.awt.Color(200, 200, 200));
@@ -1015,7 +1020,7 @@ public class Dashboard extends javax.swing.JFrame {
         tripLayout.setHorizontalGroup(
             tripLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(tripLayout.createSequentialGroup()
-                .addGap(59, 59, 59)
+                .addGap(57, 57, 57)
                 .addComponent(jLabel23)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1108,15 +1113,15 @@ public class Dashboard extends javax.swing.JFrame {
             offersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, offersLayout.createSequentialGroup()
                 .addContainerGap(50, Short.MAX_VALUE)
-                .addComponent(jLabel30, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(43, 43, 43))
+                .addComponent(jLabel30)
+                .addGap(57, 57, 57))
         );
         offersLayout.setVerticalGroup(
             offersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(offersLayout.createSequentialGroup()
-                .addGap(26, 26, 26)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, offersLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel30)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(27, 27, 27))
         );
 
         it_manager.setBackground(new java.awt.Color(200, 200, 200));
@@ -1447,6 +1452,12 @@ public class Dashboard extends javax.swing.JFrame {
         manageAdmin.setVisible(true);
         dispose();
     }//GEN-LAST:event_adminMouseClicked
+
+    private void managesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_managesMouseClicked
+        ManageManages manageManages = new ManageManages();
+        manageManages.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_managesMouseClicked
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

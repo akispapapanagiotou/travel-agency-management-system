@@ -32,6 +32,10 @@ DROP PROCEDURE IF EXISTS get_admin_entries;
 DROP PROCEDURE IF EXISTS add_admin_entry;
 DROP PROCEDURE IF EXISTS update_admin_entry;
 DROP PROCEDURE IF EXISTS delete_admin_entry;
+DROP PROCEDURE IF EXISTS get_manages_entries;
+DROP PROCEDURE IF EXISTS add_manages_entry;
+DROP PROCEDURE IF EXISTS update_manages_entry;
+DROP PROCEDURE IF EXISTS delete_manages_entry;
 
 
 
@@ -350,5 +354,49 @@ CREATE PROCEDURE delete_admin_entry(IN adm_AT CHAR(10))
 BEGIN
 	DELETE FROM admin
     WHERE admin.adm_AT = adm_AT;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that returns all the manages entries. */
+DELIMITER $
+CREATE PROCEDURE get_manages_entries()
+BEGIN
+	SELECT * FROM manages;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that adds an entry to the manages table. */ 
+DELIMITER $
+CREATE PROCEDURE add_manages_entry(IN mng_adm_AT CHAR(10), IN mng_br_code INT)
+BEGIN
+	INSERT INTO manages VALUES
+	(mng_adm_AT, mng_br_code);
+END$
+DELIMITER ;
+
+
+
+/* Procedure that updates an existing entry of the manages table. */
+DELIMITER $
+CREATE PROCEDURE update_manages_entry(IN mng_adm_AT CHAR(10), IN mng_br_code INT)
+BEGIN
+	UPDATE manages
+    SET manages.mng_adm_AT=mng_adm_AT, manages.mng_br_code=mng_br_code
+    WHERE manages.mng_adm_AT=mng_adm_AT;
+END$
+DELIMITER ;
+
+
+
+/* Procedure that deletes an entry from the manages table. */
+DELIMITER $
+CREATE PROCEDURE delete_manages_entry(IN mng_adm_AT CHAR(10), IN mng_br_code INT)
+BEGIN
+	DELETE FROM manages
+    WHERE manages.mng_adm_AT = mng_adm_AT AND manages.mng_br_code=mng_br_code;
 END$
 DELIMITER ;
