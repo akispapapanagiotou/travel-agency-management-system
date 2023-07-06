@@ -490,15 +490,15 @@ public class ManageAdmin extends javax.swing.JFrame {
          
          adminAT = adminATField.getText();
          
-         String sql = "{CALL delete_worker_entry(?)}";
+         String sql = "{CALL delete_admin_entry(?)}";
          
          try {
             CallableStatement deleteAdminEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
             deleteAdminEntries.setString(1, adminAT);
             
-            int rowCount = deleteAdminEntries.executeUpdate();
+           int rowCount = deleteAdminEntries.executeUpdate();
             
-            isDeleted = rowCount > 0;
+           isDeleted = rowCount > 0;
             
         } catch (SQLException ex) {
             ex.printStackTrace();

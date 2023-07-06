@@ -20,7 +20,7 @@ DROP TRIGGER IF EXISTS log_destination_update;
 DROP TRIGGER IF EXISTS log_destination_delete;
 DROP TRIGGER IF EXISTS prevent_trip_changes;
 DROP TRIGGER IF EXISTS prevent_salary_decrease;
-
+DROP TRIGGER IF EXISTS prevent_admin_delete;
 
 
 /* Trigger that logs an insert operation on trip by inserting the lastname of the it_manager, 
@@ -363,3 +363,17 @@ BEGIN
 END$
 DELIMITER ;
 
+
+
+/* Trigger that prevents the deletion of admin if the type is administrative. */
+DELIMITER $
+CREATE TRIGGER prevent_admin_delete
+BEFORE DELETE ON admin
+FOR EACH ROW
+BEGIN
+    IF OLD.adm_type = 'ADMINISTRATIVE' THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Deleting administrative admins is not allowed.';
+    END IF;
+END$
+DELIMITER ;
