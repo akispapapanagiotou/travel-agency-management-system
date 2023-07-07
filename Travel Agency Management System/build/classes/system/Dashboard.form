@@ -1667,6 +1667,9 @@
                           <Color blue="c8" green="c8" red="c8" type="rgb"/>
                         </Property>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="guideMouseClicked"/>
+                      </Events>
 
                       <Layout>
                         <DimensionLayout dim="0">
