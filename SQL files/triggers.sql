@@ -23,6 +23,7 @@ DROP TRIGGER IF EXISTS prevent_salary_decrease;
 DROP TRIGGER IF EXISTS prevent_admin_delete;
 
 
+
 /* Trigger that logs an insert operation on trip by inserting the lastname of the it_manager, 
 the operation type and some other data on the trip table. */
 DELIMITER $
