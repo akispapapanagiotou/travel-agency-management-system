@@ -974,6 +974,11 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         event.setBackground(new java.awt.Color(200, 200, 200));
+        event.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eventMouseClicked(evt);
+            }
+        });
 
         jLabel20.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel20.setForeground(new java.awt.Color(0, 0, 0));
@@ -1502,6 +1507,12 @@ public class Dashboard extends javax.swing.JFrame {
          manageTrip.setVisible(true);
          dispose();
     }//GEN-LAST:event_tripMouseClicked
+
+    private void eventMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eventMouseClicked
+         ManageEvent manageEvent = new ManageEvent();
+         manageEvent.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_eventMouseClicked
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -658,10 +658,10 @@ DELIMITER ;
 
 /* Procedure that deletes an entry from the event table. */
 DELIMITER $
-CREATE PROCEDURE delete_event_entry(IN ev_tr_id INT)
+CREATE PROCEDURE delete_event_entry(IN ev_tr_id INT, IN ev_start DATETIME)
 BEGIN
 	DELETE FROM event
-    WHERE event.ev_tr_id=ev_tr_id;
+    WHERE event.ev_tr_id=ev_tr_id AND event.ev_start=ev_start;
 END$
 DELIMITER ;
 
