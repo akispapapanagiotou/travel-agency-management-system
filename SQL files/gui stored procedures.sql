@@ -562,7 +562,7 @@ CREATE PROCEDURE update_languages_entry(IN lng_gui_AT CHAR(10), IN lng_language 
 BEGIN
 	UPDATE languages
     SET languages.lng_gui_AT=lng_gui_AT, languages.lng_language=lng_language
-    WHERE languages.lng_gui_AT=lng_gui_AT;
+    WHERE languages.lng_gui_AT=lng_gui_AT AND languages.lng_language=lng_language;
 END$
 DELIMITER ;
 

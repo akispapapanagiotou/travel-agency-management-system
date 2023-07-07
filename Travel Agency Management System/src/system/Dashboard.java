@@ -918,6 +918,11 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         languages.setBackground(new java.awt.Color(200, 200, 200));
+        languages.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                languagesMouseClicked(evt);
+            }
+        });
 
         jLabel18.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel18.setForeground(new java.awt.Color(0, 0, 0));
@@ -1480,6 +1485,12 @@ public class Dashboard extends javax.swing.JFrame {
          manageGuide.setVisible(true);
          dispose();
     }//GEN-LAST:event_guideMouseClicked
+
+    private void languagesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_languagesMouseClicked
+         ManageLanguages manageLanguages = new ManageLanguages();
+         manageLanguages.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_languagesMouseClicked
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
