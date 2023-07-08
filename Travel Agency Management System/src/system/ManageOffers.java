@@ -13,7 +13,6 @@ import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 
-
 public class ManageOffers extends javax.swing.JFrame {
 
     private int offersID;
@@ -312,9 +311,9 @@ public class ManageOffers extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90)
+                .addGap(88, 88, 88)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(105, Short.MAX_VALUE))
+                .addContainerGap(107, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -323,8 +322,8 @@ public class ManageOffers extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 346, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(157, 157, 157))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(236, 236, 236))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -512,7 +511,7 @@ public class ManageOffers extends javax.swing.JFrame {
          offersCost = Float.parseFloat(offersCostField.getText());
          offersDestinationID = Integer.parseInt(offersDestinationIDField.getText());
          
-         String sql = "{CALL update_offers_entry(?, ?, ?, ?, ?}";
+         String sql = "{CALL update_offers_entry(?, ?, ?, ?, ?)}";
          
          try {
             CallableStatement updateOffersEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
@@ -538,7 +537,7 @@ public class ManageOffers extends javax.swing.JFrame {
          
          offersID = Integer.parseInt(offersIDField.getText());
          
-         String sql = "{CALL delete_offers_entry(?}";
+         String sql = "{CALL delete_offers_entry(?)}";
          
          try {
             CallableStatement deleteOffersEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
@@ -546,7 +545,7 @@ public class ManageOffers extends javax.swing.JFrame {
             
             int rowCount = deleteOffersEntries.executeUpdate();
             
-           isDeleted = rowCount > 0;
+            isDeleted = rowCount > 0;
             
         } catch (SQLException ex) {
             ex.printStackTrace();

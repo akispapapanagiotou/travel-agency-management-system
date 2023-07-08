@@ -514,7 +514,7 @@ public class ManageTravelTo extends javax.swing.JFrame {
          travelToID = Integer.parseInt(travelToTripIDField.getText());
          travelToDestinationID = Integer.parseInt(travelToDestinationIDField.getText());
          
-         String sql = "{CALL delete_travel_to_entry(?, ?}";
+         String sql = "{CALL delete_travel_to_entry(?, ?)}";
          
          try {
             CallableStatement deleteTravelToEntries = DBConnection.getInstance().getConnection().prepareCall(sql);

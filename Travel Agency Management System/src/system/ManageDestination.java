@@ -561,7 +561,7 @@ public class ManageDestination extends javax.swing.JFrame {
          
          destinationID = Integer.parseInt(destinationIDField.getText());
          
-         String sql = "{CALL delete_destination_entry(?}";
+         String sql = "{CALL delete_destination_entry(?)}";
          
          try {
             CallableStatement deleteDestinationEntries = DBConnection.getInstance().getConnection().prepareCall(sql);
