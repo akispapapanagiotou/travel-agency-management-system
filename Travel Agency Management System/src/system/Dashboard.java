@@ -1081,6 +1081,11 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         reservation.setBackground(new java.awt.Color(200, 200, 200));
+        reservation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                reservationMouseClicked(evt);
+            }
+        });
 
         jLabel27.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(0, 0, 0));
@@ -1513,6 +1518,12 @@ public class Dashboard extends javax.swing.JFrame {
          manageEvent.setVisible(true);
          dispose();
     }//GEN-LAST:event_eventMouseClicked
+
+    private void reservationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_reservationMouseClicked
+         ManageReservation manageReservation = new ManageReservation();
+         manageReservation.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_reservationMouseClicked
 
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
