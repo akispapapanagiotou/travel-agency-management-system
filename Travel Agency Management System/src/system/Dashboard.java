@@ -112,10 +112,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel29 = new javax.swing.JLabel();
         offers = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
-        it_manager = new javax.swing.JPanel();
-        jLabel31 = new javax.swing.JLabel();
-        reservation_offers = new javax.swing.JPanel();
-        jLabel32 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
         viewInfoPanel = new javax.swing.JPanel();
         jPanel8 = new javax.swing.JPanel();
@@ -1058,6 +1054,11 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         travel_to.setBackground(new java.awt.Color(200, 200, 200));
+        travel_to.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                travel_toMouseClicked(evt);
+            }
+        });
 
         jLabel25.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel25.setForeground(new java.awt.Color(0, 0, 0));
@@ -1070,7 +1071,7 @@ public class Dashboard extends javax.swing.JFrame {
             .addGroup(travel_toLayout.createSequentialGroup()
                 .addGap(37, 37, 37)
                 .addComponent(jLabel25)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         travel_toLayout.setVerticalGroup(
             travel_toLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1109,6 +1110,11 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         destination.setBackground(new java.awt.Color(200, 200, 200));
+        destination.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                destinationMouseClicked(evt);
+            }
+        });
 
         jLabel29.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel29.setForeground(new java.awt.Color(0, 0, 0));
@@ -1132,6 +1138,11 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         offers.setBackground(new java.awt.Color(200, 200, 200));
+        offers.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                offersMouseClicked(evt);
+            }
+        });
 
         jLabel30.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLabel30.setForeground(new java.awt.Color(0, 0, 0));
@@ -1154,52 +1165,6 @@ public class Dashboard extends javax.swing.JFrame {
                 .addGap(27, 27, 27))
         );
 
-        it_manager.setBackground(new java.awt.Color(200, 200, 200));
-
-        jLabel31.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jLabel31.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel31.setText("IT-Manager");
-
-        javax.swing.GroupLayout it_managerLayout = new javax.swing.GroupLayout(it_manager);
-        it_manager.setLayout(it_managerLayout);
-        it_managerLayout.setHorizontalGroup(
-            it_managerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(it_managerLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(jLabel31)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        it_managerLayout.setVerticalGroup(
-            it_managerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, it_managerLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel31)
-                .addGap(26, 26, 26))
-        );
-
-        reservation_offers.setBackground(new java.awt.Color(200, 200, 200));
-
-        jLabel32.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel32.setText("Reservation Offers");
-
-        javax.swing.GroupLayout reservation_offersLayout = new javax.swing.GroupLayout(reservation_offers);
-        reservation_offers.setLayout(reservation_offersLayout);
-        reservation_offersLayout.setHorizontalGroup(
-            reservation_offersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reservation_offersLayout.createSequentialGroup()
-                .addContainerGap(39, Short.MAX_VALUE)
-                .addComponent(jLabel32, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(27, 27, 27))
-        );
-        reservation_offersLayout.setVerticalGroup(
-            reservation_offersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, reservation_offersLayout.createSequentialGroup()
-                .addContainerGap(25, Short.MAX_VALUE)
-                .addComponent(jLabel32)
-                .addGap(22, 22, 22))
-        );
-
         jLabel33.setFont(new java.awt.Font("Calibri", 0, 27)); // NOI18N
         jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("Select the table you want to manage:");
@@ -1208,47 +1173,42 @@ public class Dashboard extends javax.swing.JFrame {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(312, 312, 312))
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel7Layout.createSequentialGroup()
                         .addGap(51, 51, 51)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(branch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(reservation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(driver, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(35, 35, 35)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(phones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(guide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(phones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(guide, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(28, 28, 28)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(travel_to, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(languages, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(worker, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(34, 34, 34)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(trip, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(36, 36, 36)
-                                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(event, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(manages, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel7Layout.createSequentialGroup()
-                                .addComponent(it_manager, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(36, 36, 36)
-                                .addComponent(offers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(trip, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(admin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(36, 36, 36)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(event, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(manages, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addGap(398, 398, 398)
-                        .addComponent(reservation_offers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(57, Short.MAX_VALUE))
+                        .addGap(304, 304, 304)
+                        .addComponent(jLabel33, javax.swing.GroupLayout.PREFERRED_SIZE, 432, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addGap(104, 104, 104)
+                        .addComponent(reservation, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(46, 46, 46)
+                        .addComponent(destination, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(43, 43, 43)
+                        .addComponent(travel_to, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49)
+                        .addComponent(offers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(65, Short.MAX_VALUE))
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1275,11 +1235,8 @@ public class Dashboard extends javax.swing.JFrame {
                     .addComponent(reservation, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(destination, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(offers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(it_manager, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(travel_to, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(36, 36, 36)
-                .addComponent(reservation_offers, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(36, 36, 36))
+                .addGap(149, 149, 149))
         );
 
         javax.swing.GroupLayout manageDataPanelLayout = new javax.swing.GroupLayout(manageDataPanel);
@@ -1525,6 +1482,24 @@ public class Dashboard extends javax.swing.JFrame {
          dispose();
     }//GEN-LAST:event_reservationMouseClicked
 
+    private void destinationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_destinationMouseClicked
+         ManageDestination manageDestination = new ManageDestination();
+         manageDestination.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_destinationMouseClicked
+
+    private void travel_toMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_travel_toMouseClicked
+         ManageTravelTo manageTravelTo = new ManageTravelTo();
+         manageTravelTo.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_travel_toMouseClicked
+
+    private void offersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_offersMouseClicked
+         ManageOffers manageOffers = new ManageOffers();
+         manageOffers.setVisible(true);
+         dispose();
+    }//GEN-LAST:event_offersMouseClicked
+
    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel admin;
@@ -1538,7 +1513,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel headerPanel;
     private javax.swing.JPanel homePagePanel;
     private javax.swing.JPanel homePageTitlePanel;
-    private javax.swing.JPanel it_manager;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -1563,8 +1537,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -1602,7 +1574,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel offers;
     private javax.swing.JPanel phones;
     private javax.swing.JPanel reservation;
-    private javax.swing.JPanel reservation_offers;
     private javax.swing.JTable reservationsPerTripTable;
     private javax.swing.JPanel sidePanel;
     private javax.swing.JLabel totalIncomeLabel;

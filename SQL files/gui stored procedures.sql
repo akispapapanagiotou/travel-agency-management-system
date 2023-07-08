@@ -68,18 +68,10 @@ DROP PROCEDURE IF EXISTS get_travel_to_entries;
 DROP PROCEDURE IF EXISTS add_travel_to_entry;
 DROP PROCEDURE IF EXISTS update_travel_to_entry;
 DROP PROCEDURE IF EXISTS delete_travel_to_entry;
-DROP PROCEDURE IF EXISTS get_it_manager_entries;
-DROP PROCEDURE IF EXISTS add_it_manager_entry;
-DROP PROCEDURE IF EXISTS update_it_manager_entry;
-DROP PROCEDURE IF EXISTS delete_it_manager_entry;
 DROP PROCEDURE IF EXISTS get_offers_entries;
 DROP PROCEDURE IF EXISTS add_offers_entry;
 DROP PROCEDURE IF EXISTS update_offers_entry;
 DROP PROCEDURE IF EXISTS delete_offers_entry;
-DROP PROCEDURE IF EXISTS get_reservation_offers_entries;
-DROP PROCEDURE IF EXISTS add_reservation_offers_entry;
-DROP PROCEDURE IF EXISTS update_reservation_offers_entry;
-DROP PROCEDURE IF EXISTS delete_reservation_offers_entry;
 
 
 
@@ -799,50 +791,6 @@ DELIMITER ;
 
 
 
-/* Procedure that returns all the it_manager entries. */
-DELIMITER $
-CREATE PROCEDURE get_it_manager_entries()
-BEGIN
-	SELECT * FROM it_manager;
-END$
-DELIMITER ;
-
-
-
-/* Procedure that adds an entry to the it_manager table. */ 
-DELIMITER $
-CREATE PROCEDURE add_it_manager_entry(IN it_AT CHAR(10), IN it_password CHAR(10), IN it_start_date DATE, IN it_end_date DATE, IN it_is_active BOOLEAN)
-BEGIN
-	INSERT INTO it_manager VALUES
-	(it_AT, it_password, it_start_date, it_end_date, it_is_active);
-END$
-DELIMITER ;
-
-
-
-/* Procedure that updates an existing entry of the it_manager table. */
-DELIMITER $
-CREATE PROCEDURE update_it_manager_entry(IN it_AT CHAR(10), IN it_password CHAR(10), IN it_start_date DATE, IN it_end_date DATE, IN it_is_active BOOLEAN)
-BEGIN
-	UPDATE it_manager
-    SET it_manager.it_AT=it_AT, it_manager.it_password=it_password, it_manager.it_start_date=it_start_date, it_manager.it_end_date=it_end_date, it_manager.it_is_active=it_is_active
-    WHERE it_manager.it_AT=it_AT;
-END$
-DELIMITER ;
-
-
-
-/* Procedure that deletes an entry from the it_manager table. */
-DELIMITER $
-CREATE PROCEDURE delete_it_manager_entry(IN it_AT CHAR(10))
-BEGIN
-	DELETE FROM it_manager
-    WHERE it_manager.it_AT=it_AT;
-END$
-DELIMITER ;
-
-
-
 /* Procedure that returns all the offers entries. */
 DELIMITER $
 CREATE PROCEDURE get_offers_entries()
@@ -882,49 +830,5 @@ CREATE PROCEDURE delete_offers_entry(IN of_id INT)
 BEGIN
 	DELETE FROM offers
     WHERE offers.of_id=of_id;
-END$
-DELIMITER ;
-
-
-
-/* Procedure that returns all the reservation_offers entries. */
-DELIMITER $
-CREATE PROCEDURE get_reservation_offers_entries()
-BEGIN
-	SELECT * FROM reservation_offers;
-END$
-DELIMITER ;
-
-
-
-/* Procedure that adds an entry to the reservation_offers table. */ 
-DELIMITER $
-CREATE PROCEDURE add_reservation_offers_entry(IN res_of_id INT, IN res_of_lname VARCHAR(20), IN res_of_name VARCHAR(20), IN res_of_trip_id INT, IN res_payment FLOAT)
-BEGIN
-	INSERT INTO reservation_offers VALUES
-	(res_of_id, res_of_lname, res_of_name, res_of_trip_id, res_payment);
-END$
-DELIMITER ;
-
-
-
-/* Procedure that updates an existing entry of the reservation_offers table. */
-DELIMITER $
-CREATE PROCEDURE update_reservation_offers_entry(IN res_of_id INT, IN res_of_lname VARCHAR(20), IN res_of_name VARCHAR(20), IN res_of_trip_id INT, IN res_payment FLOAT)
-BEGIN
-	UPDATE reservation_offers
-    SET reservation_offers.res_of_id=res_of_id, reservation_offers.res_of_lname=res_of_lname, reservation_offers.res_of_name=res_of_name, reservation_offers.res_of_trip_id=res_of_trip_id, reservation_offers.res_payment=res_payment
-    WHERE reservation_offers.res_of_id=res_of_id;
-END$
-DELIMITER ;
-
-
-
-/* Procedure that deletes an entry from the reservation_offers table. */
-DELIMITER $
-CREATE PROCEDURE delete_reservation_offers_entry(IN res_of_id INT)
-BEGIN
-	DELETE FROM reservation_offers
-    WHERE reservation_offers.res_of_id=res_of_id;
 END$
 DELIMITER ;
