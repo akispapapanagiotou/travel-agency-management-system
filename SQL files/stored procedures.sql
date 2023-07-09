@@ -76,8 +76,8 @@ BEGIN
 		THEN
 			SELECT tr_cost, tr_maxseats INTO trip_cost, trip_maxseats FROM trip WHERE tr_id=trip_id; 
             
-			SELECT COUNT(*) INTO num_of_reservations FROM trip 
-			INNER JOIN reservation ON trip.tr_id=reservation.res_tr_id 
+			SELECT COUNT(*) INTO num_of_reservations FROM trip
+			INNER JOIN reservation ON trip.tr_id=reservation.res_tr_id
 			WHERE trip_id=tr_id;
             
 			SET num_of_empty_seats = trip_maxseats - num_of_reservations;

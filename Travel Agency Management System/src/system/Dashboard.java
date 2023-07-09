@@ -44,12 +44,6 @@ public class Dashboard extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         manageDataTitlePanel = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        viewInfoTitlePanel = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        newITManagerTitlePanel = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
-        viewLogActionsTitlePanel = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         logOutTitlePanel = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         travelAgencyIconPanel = new javax.swing.JPanel();
@@ -113,12 +107,6 @@ public class Dashboard extends javax.swing.JFrame {
         offers = new javax.swing.JPanel();
         jLabel30 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
-        viewInfoPanel = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        newITManagerPanel = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        viewLogActionsPanel = new javax.swing.JPanel();
-        jPanel10 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard | Travel Agency Management System");
@@ -198,7 +186,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sidePanel.add(homePageTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 50));
+        sidePanel.add(homePageTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 130, 210, 50));
 
         manageDataTitlePanel.setBackground(new java.awt.Color(45, 62, 80));
         manageDataTitlePanel.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -235,118 +223,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addContainerGap())
         );
 
-        sidePanel.add(manageDataTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 110, 210, 50));
-
-        viewInfoTitlePanel.setBackground(new java.awt.Color(45, 62, 80));
-        viewInfoTitlePanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewInfoTitlePanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                viewInfoTitlePanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                viewInfoTitlePanelMouseExited(evt);
-            }
-        });
-
-        jLabel4.setBackground(new java.awt.Color(45, 62, 80));
-        jLabel4.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setText("View Info");
-
-        javax.swing.GroupLayout viewInfoTitlePanelLayout = new javax.swing.GroupLayout(viewInfoTitlePanel);
-        viewInfoTitlePanel.setLayout(viewInfoTitlePanelLayout);
-        viewInfoTitlePanelLayout.setHorizontalGroup(
-            viewInfoTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(viewInfoTitlePanelLayout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addComponent(jLabel4)
-                .addContainerGap(62, Short.MAX_VALUE))
-        );
-        viewInfoTitlePanelLayout.setVerticalGroup(
-            viewInfoTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewInfoTitlePanelLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addContainerGap())
-        );
-
-        sidePanel.add(viewInfoTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 210, 50));
-
-        newITManagerTitlePanel.setBackground(new java.awt.Color(45, 62, 80));
-        newITManagerTitlePanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                newITManagerTitlePanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                newITManagerTitlePanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                newITManagerTitlePanelMouseExited(evt);
-            }
-        });
-
-        jLabel8.setBackground(new java.awt.Color(45, 62, 80));
-        jLabel8.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("New IT Manager");
-
-        javax.swing.GroupLayout newITManagerTitlePanelLayout = new javax.swing.GroupLayout(newITManagerTitlePanel);
-        newITManagerTitlePanel.setLayout(newITManagerTitlePanelLayout);
-        newITManagerTitlePanelLayout.setHorizontalGroup(
-            newITManagerTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(newITManagerTitlePanelLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        newITManagerTitlePanelLayout.setVerticalGroup(
-            newITManagerTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, newITManagerTitlePanelLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel8)
-                .addContainerGap())
-        );
-
-        sidePanel.add(newITManagerTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 410, 210, 50));
-
-        viewLogActionsTitlePanel.setBackground(new java.awt.Color(45, 62, 80));
-        viewLogActionsTitlePanel.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                viewLogActionsTitlePanelMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                viewLogActionsTitlePanelMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                viewLogActionsTitlePanelMouseExited(evt);
-            }
-        });
-
-        jLabel9.setBackground(new java.awt.Color(45, 62, 80));
-        jLabel9.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setText("View Log Actions");
-
-        javax.swing.GroupLayout viewLogActionsTitlePanelLayout = new javax.swing.GroupLayout(viewLogActionsTitlePanel);
-        viewLogActionsTitlePanel.setLayout(viewLogActionsTitlePanelLayout);
-        viewLogActionsTitlePanelLayout.setHorizontalGroup(
-            viewLogActionsTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(viewLogActionsTitlePanelLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel9)
-                .addContainerGap(20, Short.MAX_VALUE))
-        );
-        viewLogActionsTitlePanelLayout.setVerticalGroup(
-            viewLogActionsTitlePanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, viewLogActionsTitlePanelLayout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jLabel9)
-                .addContainerGap())
-        );
-
-        sidePanel.add(viewLogActionsTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 460, 210, 50));
+        sidePanel.add(manageDataTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 350, 210, 50));
 
         logOutTitlePanel.setBackground(new java.awt.Color(45, 62, 80));
         logOutTitlePanel.setForeground(new java.awt.Color(255, 255, 255));
@@ -382,7 +259,7 @@ public class Dashboard extends javax.swing.JFrame {
                 .addComponent(jLabel10))
         );
 
-        sidePanel.add(logOutTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 510, 210, 40));
+        sidePanel.add(logOutTitlePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 560, 210, 40));
 
         travelAgencyIconPanel.setBackground(new java.awt.Color(45, 62, 80));
 
@@ -400,12 +277,12 @@ public class Dashboard extends javax.swing.JFrame {
         travelAgencyIconPanelLayout.setVerticalGroup(
             travelAgencyIconPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, travelAgencyIconPanelLayout.createSequentialGroup()
-                .addContainerGap(7, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        sidePanel.add(travelAgencyIconPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 230, 210, 160));
+        sidePanel.add(travelAgencyIconPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 180, 210, -1));
 
         dashboardPanel.add(sidePanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 210, 610));
 
@@ -1252,84 +1129,6 @@ public class Dashboard extends javax.swing.JFrame {
 
         mainPanel.addTab("tab2", manageDataPanel);
 
-        jPanel8.setBackground(new java.awt.Color(51, 153, 255));
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1068, Short.MAX_VALUE)
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout viewInfoPanelLayout = new javax.swing.GroupLayout(viewInfoPanel);
-        viewInfoPanel.setLayout(viewInfoPanelLayout);
-        viewInfoPanelLayout.setHorizontalGroup(
-            viewInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        viewInfoPanelLayout.setVerticalGroup(
-            viewInfoPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        mainPanel.addTab("tab3", viewInfoPanel);
-
-        jPanel9.setBackground(new java.awt.Color(0, 51, 0));
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1068, Short.MAX_VALUE)
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout newITManagerPanelLayout = new javax.swing.GroupLayout(newITManagerPanel);
-        newITManagerPanel.setLayout(newITManagerPanelLayout);
-        newITManagerPanelLayout.setHorizontalGroup(
-            newITManagerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        newITManagerPanelLayout.setVerticalGroup(
-            newITManagerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        mainPanel.addTab("tab4", newITManagerPanel);
-
-        jPanel10.setBackground(new java.awt.Color(255, 204, 204));
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1068, Short.MAX_VALUE)
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 614, Short.MAX_VALUE)
-        );
-
-        javax.swing.GroupLayout viewLogActionsPanelLayout = new javax.swing.GroupLayout(viewLogActionsPanel);
-        viewLogActionsPanel.setLayout(viewLogActionsPanelLayout);
-        viewLogActionsPanelLayout.setHorizontalGroup(
-            viewLogActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        viewLogActionsPanelLayout.setVerticalGroup(
-            viewLogActionsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-
-        mainPanel.addTab("tab5", viewLogActionsPanel);
-
         dashboardPanel.add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, 1070, 640));
 
         getContentPane().add(dashboardPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1280, 670));
@@ -1350,30 +1149,6 @@ public class Dashboard extends javax.swing.JFrame {
        manageDataTitlePanel.setBackground(mouseExitedButtonColor);
     }//GEN-LAST:event_manageDataTitlePanelMouseExited
 
-    private void viewInfoTitlePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewInfoTitlePanelMouseEntered
-        viewInfoTitlePanel.setBackground(mouseEnteredButtonColor);
-    }//GEN-LAST:event_viewInfoTitlePanelMouseEntered
-
-    private void viewInfoTitlePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewInfoTitlePanelMouseExited
-        viewInfoTitlePanel.setBackground(mouseExitedButtonColor);
-    }//GEN-LAST:event_viewInfoTitlePanelMouseExited
-
-    private void newITManagerTitlePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newITManagerTitlePanelMouseEntered
-        newITManagerTitlePanel.setBackground(mouseEnteredButtonColor);
-    }//GEN-LAST:event_newITManagerTitlePanelMouseEntered
-
-    private void newITManagerTitlePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newITManagerTitlePanelMouseExited
-        newITManagerTitlePanel.setBackground(mouseExitedButtonColor);
-    }//GEN-LAST:event_newITManagerTitlePanelMouseExited
-
-    private void viewLogActionsTitlePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLogActionsTitlePanelMouseEntered
-        viewLogActionsTitlePanel.setBackground(mouseEnteredButtonColor);
-    }//GEN-LAST:event_viewLogActionsTitlePanelMouseEntered
-
-    private void viewLogActionsTitlePanelMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLogActionsTitlePanelMouseExited
-        viewLogActionsTitlePanel.setBackground(mouseExitedButtonColor);
-    }//GEN-LAST:event_viewLogActionsTitlePanelMouseExited
-
     private void logOutTitlePanelMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logOutTitlePanelMouseEntered
        logOutTitlePanel.setBackground(mouseEnteredButtonColor);
     }//GEN-LAST:event_logOutTitlePanelMouseEntered
@@ -1385,18 +1160,6 @@ public class Dashboard extends javax.swing.JFrame {
     private void manageDataTitlePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageDataTitlePanelMouseClicked
         mainPanel.setSelectedIndex(1);
     }//GEN-LAST:event_manageDataTitlePanelMouseClicked
-
-    private void viewInfoTitlePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewInfoTitlePanelMouseClicked
-        mainPanel.setSelectedIndex(2);
-    }//GEN-LAST:event_viewInfoTitlePanelMouseClicked
-
-    private void newITManagerTitlePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_newITManagerTitlePanelMouseClicked
-       mainPanel.setSelectedIndex(3);
-    }//GEN-LAST:event_newITManagerTitlePanelMouseClicked
-
-    private void viewLogActionsTitlePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_viewLogActionsTitlePanelMouseClicked
-        mainPanel.setSelectedIndex(4);
-    }//GEN-LAST:event_viewLogActionsTitlePanelMouseClicked
 
     private void homePageTitlePanelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_homePageTitlePanelMouseClicked
         mainPanel.setSelectedIndex(0);
@@ -1538,13 +1301,9 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
@@ -1553,8 +1312,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JPanel languages;
@@ -1563,8 +1320,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel manageDataPanel;
     private javax.swing.JPanel manageDataTitlePanel;
     private javax.swing.JPanel manages;
-    private javax.swing.JPanel newITManagerPanel;
-    private javax.swing.JPanel newITManagerTitlePanel;
     private javax.swing.JLabel noOfAdminsLabel;
     private javax.swing.JLabel noOfBranchesLabel;
     private javax.swing.JLabel noOfDriversLabel;
@@ -1580,10 +1335,6 @@ public class Dashboard extends javax.swing.JFrame {
     private javax.swing.JPanel travelAgencyIconPanel;
     private javax.swing.JPanel travel_to;
     private javax.swing.JPanel trip;
-    private javax.swing.JPanel viewInfoPanel;
-    private javax.swing.JPanel viewInfoTitlePanel;
-    private javax.swing.JPanel viewLogActionsPanel;
-    private javax.swing.JPanel viewLogActionsTitlePanel;
     private javax.swing.JLabel welcomeMessage;
     private javax.swing.JPanel worker;
     // End of variables declaration//GEN-END:variables
