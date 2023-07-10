@@ -20,4 +20,4 @@ Screenshots for the rest of the panels can be found <a href="https://github.com/
 - Java
 - JDBC API
 - MySQL
-- NetBeans
+- NetBeans IDE
