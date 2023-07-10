@@ -15,7 +15,7 @@ This repository contains the code for the implementation of a Java-based travel 
 ### Manage Driver:
 ![manage driver](https://github.com/akispapapanagiotou/travel-agency-management-system/assets/111454100/f65acfa7-041c-4189-a908-161bc4b9552e)
 ### Other Panels:
-The rest of the panels can be found <a href="https://github.com/akispapapanagiotou/travel-agency-management-system/tree/main/Screenshots/Manage%20Data%20Panels%20-%20Screenshots" target="_blank">here</a>.
+Screenshots for the rest of the panels can be found <a href="https://github.com/akispapapanagiotou/travel-agency-management-system/tree/main/Screenshots/Manage%20Data%20Panels%20-%20Screenshots">here</a>.
 ## Built with:
 - Java
 - JDBC API
